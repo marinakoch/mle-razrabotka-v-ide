@@ -20,6 +20,3 @@ class DataFrameReporter:
         
         print('Количество пропусков:', df.isna().sum().sum())        
         print('Доля пропусков:', format(df.isna().mean().mean(), self.float_format))
-
-
-reporter = DataFrameReporter()
