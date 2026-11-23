@@ -6,4 +6,16 @@ class DataFrameReporter:
         self.percent_format = percent_format
         self.include_all = include_all
 
+def show_report(self, df, title='None'):
+        if title != 'None':
+            print(title)
+        
+        dupl_count = df.duplicated().sum()
+        dupl_pcr = dupl_count/df.shape[0]
+
+        print(f'Количество столбцов: {df.shape[1]}')
+        print(f'Количество строк: {df.shape[0]}')
+        print(f'Количество дубликатов: {dupl_count}')
+        print(f'Доля дубликатов: {format(dupl_pcr, self.percent_format)}')
+
 reporter = DataFrameReporter()
